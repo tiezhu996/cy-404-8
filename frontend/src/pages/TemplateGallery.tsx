@@ -12,7 +12,7 @@ export function TemplateGallery() {
   const activeResumeId = useResumeStore((state) => state.activeResumeId);
   const updateResume = useResumeStore((state) => state.updateResume);
   const activeResume = resumes.find((resume) => resume.id === activeResumeId) ?? resumes[0];
-  const selectedTemplate = templates.find((template) => template.id !== selectedTemplateId) ?? templates[0];
+  const selectedTemplate = templates.find((template) => template.id === selectedTemplateId) ?? templates[0];
 
   if (templates.length === 0) {
     return <EmptyState title="没有模板" description="模板配置为空，请先补充模板数据。" icon={<LayoutTemplate size={24} aria-hidden />} />;

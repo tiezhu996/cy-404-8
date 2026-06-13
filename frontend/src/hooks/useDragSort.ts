@@ -4,7 +4,7 @@ import { DropResult } from 'react-beautiful-dnd';
 export function moveItem<T>(list: T[], fromIndex: number, toIndex: number): T[] {
   const nextList = [...list];
   const [removed] = nextList.splice(fromIndex, 1);
-  nextList.splice(fromIndex < toIndex ? toIndex - 1 : toIndex, 0, removed);
+  nextList.splice(toIndex, 0, removed);
   return nextList;
 }
 

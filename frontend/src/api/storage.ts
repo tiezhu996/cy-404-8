@@ -24,7 +24,7 @@ export function readWorkspaceSnapshot(fallbackProfile: Profile): WorkspaceSnapsh
 
 export function writeWorkspaceSnapshot(snapshot: WorkspaceSnapshot): void {
   writeStorage(storageKeys.resumes, snapshot.resumes);
-  writeStorage(storageKeys.activeResumeId, snapshot.resumes[0]?.id ?? null);
+  writeStorage(storageKeys.activeResumeId, snapshot.activeResumeId ?? snapshot.resumes[0]?.id ?? null);
   writeStorage(storageKeys.profile, snapshot.profile);
   writeStorage(storageKeys.template, snapshot.selectedTemplateId);
   writeStorage(storageKeys.theme, snapshot.theme);

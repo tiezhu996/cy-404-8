@@ -14,10 +14,10 @@ export async function exportElementToPdf(element: HTMLElement, options: PdfExpor
   });
   const imageData = canvas.toDataURL('image/png');
   const pdf = new jsPDF('p', 'mm', 'a4');
-  const width = 210 - options.margin * 2;
+  const width = 210;
   const height = (canvas.height * width) / canvas.width;
 
-  pdf.addImage(imageData, 'PNG', options.margin, options.margin, width, height);
+  pdf.addImage(imageData, 'PNG', 0, 0, width, height);
   pdf.save(options.filename);
 }
 
